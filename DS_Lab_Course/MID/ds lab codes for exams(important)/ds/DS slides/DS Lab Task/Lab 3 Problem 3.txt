@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+ struct Student {
+    int id;
+    int creditsCompleted;
+    float cgpa;
+};
+
+ void HighCG(Student s[], int m) {
+    cout << "CGPA more than 3.75:" << endl;
+    for(int i=0; i<m; i++) {
+        if(s[i].cgpa > 3.75) {
+            cout << "Student ID: " << s[i].id << endl;
+        }
+    }
+}
+
+ void HighCredit(Student s[], int n) {
+    cout << "More than 50 credits:" << endl;
+    for(int i=0; i<n; i++) {
+        if(s[i].creditsCompleted > 50) {
+            cout << "Student ID: " << s[i].id << endl;
+        }
+    }
+}
+
+ int main() {
+    int numStudents =10;
+    Student s[numStudents];
+
+    for(int i=0; i<numStudents; i++) {
+        cout<<"Student Details"<<" "<<(i + 1)<< " : " << endl;
+        cout<<"ID: "<<endl;
+        cin>>s[i].id;
+        cout <<"Credits Completed: "<<endl;
+        cin >>s[i].creditsCompleted;
+        cout<<"CGPA: "<<endl;
+        cin>>s[i].cgpa;
+
+    }
+
+    HighCG(s, numStudents);
+    HighCredit(s, numStudents);
+
+}
+

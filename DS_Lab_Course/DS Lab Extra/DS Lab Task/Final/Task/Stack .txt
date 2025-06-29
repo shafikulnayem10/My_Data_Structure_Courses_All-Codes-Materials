@@ -1,0 +1,84 @@
+STACK
+
+#include <iostream>
+using namespace std;
+
+#define MAX 10 // Maximum size of the stack
+
+// Stack class definition
+class Stack {
+private:
+    int items[MAX]; // Array to hold the stack items
+    int top; // Index of the top item
+
+public:
+    // Constructor to initialize the stack
+    Stack() {
+        top = -1; // Set top to -1 to indicate the stack is empty
+    }
+
+    // Function to check if the stack is full
+    bool isFull() {
+        return top == MAX - 1; // Check if the top is at the last position
+    }
+
+    // Function to check if the stack is empty
+    bool isEmpty() {
+        return top == -1; // Check if the top is -1
+    }
+
+    // Function to add an item to the stack
+    void push(int newItem) {
+        if (isFull()) {
+            cout << "Stack is full! Cannot add " << newItem << endl; // If full, show message
+        } else {
+            items[++top] = newItem; // Add the new item on top
+            cout << newItem << " pushed to stack." << endl; // Show what was added
+        }
+    }
+
+    // Function to remove an item from the stack
+    void pop() {
+        if (isEmpty()) {
+            cout << "Stack is empty! Cannot pop." << endl; // If empty, show message
+        } else {
+            cout << "Item popped: " << items[top--] << endl; // Remove the top item
+        }
+    }
+
+    // Function to print all items in the stack
+    void printStack() {
+        if (isEmpty()) {
+            cout << "Stack is empty." << endl; // If empty, show message
+        } else {
+            cout << "Stack items: ";
+            for (int i = 0; i <= top; i++) {
+                cout << items[i] << " "; // Print each item
+            }
+            cout << endl;
+        }
+    }
+};
+
+// Main function to run the program
+int main() {
+    Stack s; // Create a new stack object
+
+    // Add some items to the stack
+    s.push(10);
+    s.push(20);
+    s.push(30);
+    s.push(40);
+
+    // Show the current items in the stack
+    s.printStack();
+
+    // Remove an item from the stack
+    s.pop();
+
+    // Show the items again after popping
+    cout << "After popping an item:" << endl;
+    s.printStack();
+
+    return 0; // End of the program
+}

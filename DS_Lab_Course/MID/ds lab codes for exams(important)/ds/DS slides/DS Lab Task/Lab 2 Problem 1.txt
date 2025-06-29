@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int mat[100][100],tran[100][100],r,c;
+    cout<<"Enter row size: "<<endl;
+    cin>>r;
+
+    cout<<"Enter column size: "<<endl;
+    cin>>c;
+
+
+    for(int i=0; i<r; i++)
+        {
+            for (int j=0; j<c; j++){
+                cout<<"mat["<<i<<"]["<<j<<"]=";
+                cin>>mat[i][j];
+                }
+            }
+
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            tran[j][i] = mat[i][j];
+        }
+    }
+
+    cout << "After transposing: " << endl;
+    for (int i = 0; i < c; i++) {
+        for (int j = 0; j < r; j++) {
+            cout << tran[i][j] << " ";
+        }
+
+    }}

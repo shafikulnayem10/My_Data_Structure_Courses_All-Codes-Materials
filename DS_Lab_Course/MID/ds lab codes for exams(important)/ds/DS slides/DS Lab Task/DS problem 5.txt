@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int arr[100];
+    int count[100]={0};
+    int s;
+
+    cout<<"Enter array size: "<<endl;
+    cin>>s;
+    cout<<"Enter array elements: "<<endl;
+    for (int i=0;i<s;i++)
+        {
+        cin>>arr[i];
+      }
+
+    for (int i=0; i<s; i++)
+        {
+        count[arr[i]]++;
+       }
+
+
+    for (int i=0; i<s;i++)
+        {
+        if (count[arr[i]]!= 0)
+        {
+            cout<<arr[i]<<" occurs = "<<count[arr[i]]<<" times" <<endl;
+            count[arr[i]]=0;
+        }
+    }
+
+}
